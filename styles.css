@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Computer Modern";
+  src: url('Computer-Modern/cmunbx-webfont.woff');
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Computer Modern";
+  src: url('Computer-Modern/cmunsl-webfont.woff');
+  font-style: italic, oblique;
+}
+@font-face {
+  font-family: "Computer Modern";
+  src: url('Computer-Modern/cmunrm-webfont.woff');
+}
+@font-face {
+  font-family: "Computer Modern monospace";
+  src: url('webfonts/latinmodernmono_10regular_macroman/lmmono10-regular-webfont.woff');
+}
+
+* {
+  font-family: "Computer Modern", "Times New Roman", Times, serif;
+}
+code {
+  font-family: "Computer Modern monospace", monospace;
+}
