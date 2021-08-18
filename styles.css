@@ -20,6 +20,9 @@
 * {
   font-family: "Computer Modern", "Times New Roman", Times, serif;
 }
+body {
+  padding-bottom: 20px;
+}
 code {
   font-family: "Computer Modern monospace", monospace;
 }
