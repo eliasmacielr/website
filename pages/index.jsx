@@ -5,32 +5,30 @@ export default function Index() {
   return (
     <MainLayout>
       <section>
-        <Typography variant="subtitle1" component="p">My main areas of interest are computer science and web development.</Typography>
-        <Typography variant="subtitle1" component="p">I study music with the bass guitar and practice Brazilian Jiu-Jitsu.</Typography>
+        <p>My main areas of interest are computer science and web development.</p>
+        <p>I study music with the bass guitar and practice Brazilian Jiu-Jitsu.</p>
       </section>
 
       <section>
         <Typography id="work" variant="h2">Work</Typography>
-        <Typography>
-          <dl>
-            <dt>VR Products I LLC</dt>
-            <dd>
-              Web Developer, December 2020-January 2023.
-            </dd>
-          </dl>
-          <dl>
-            <dt>Konecta - Software Factory</dt>
-            <dd>
-              Software Developer, September 2017-October 2018.
-            </dd>
-          </dl>
-          <dl>
-            <dt>Cluster de Investigación Aplicada (CIA) &mdash; FP-UNA</dt>
-            <dd>
-              Junior Software Analyst, September-December 2015.
-            </dd>
-          </dl>
-        </Typography>
+        <dl>
+          <dt>VR Products I LLC</dt>
+          <dd>
+            Web Developer, December 2020-January 2023.
+          </dd>
+        </dl>
+        <dl>
+          <dt>Konecta - Software Factory</dt>
+          <dd>
+            Software Developer, September 2017-October 2018.
+          </dd>
+        </dl>
+        <dl>
+          <dt>Cluster de Investigación Aplicada (CIA) &mdash; FP-UNA</dt>
+          <dd>
+            Junior Software Analyst, September-December 2015.
+          </dd>
+        </dl>
       </section>
 
       <section>
@@ -48,8 +46,7 @@ export default function Index() {
           <dd>
             Bachelor of Science in Information Technology, 2017<br />
             Advisor: Prof. Christian Schaerer<br />
-            Thesis: Evaluation of Block Conjugate Gradient for a Single Right-Hand Side
-            <a href="http://www.cc.pol.una.py/~cschaer/Tesis-Elias%20Maciel.pdf">[PDF]</a>
+            Thesis: Evaluation of Block Conjugate Gradient for a Single Right-Hand Side <a href="http://www.cc.pol.una.py/~cschaer/Tesis-Elias%20Maciel.pdf">[PDF]</a>
           </dd>
         </dl>
       </section>
