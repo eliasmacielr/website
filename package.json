@@ -1,18 +1,19 @@
 {
   "name": "website",
   "version": "1.0.0",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.11.4",
     "computer-modern": "^0.1.2-subsetting3",
+    "eslint": "^8.32.0",
+    "eslint-config-next": "^13.1.4",
     "next": "^13.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
