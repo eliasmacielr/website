@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Typography } from '@mui/material';
@@ -5,6 +6,14 @@ import { Typography } from '@mui/material';
 export default function Header(props) {
   return (
     <>
+      <Head>
+        <title>Elias Maciel&apos;s Home Page</title>
+        <meta name="description" content="Home Page of Elias Maciel" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="keywords" content="Elias, Maciel, Computer, Science, Web, Development, Lambda" />
+        <meta name="author" content="Elias Maciel" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <header style={{ overflow: 'auto' }}>
         <Typography variant='h1' style={{ display: 'inline-flex' }}>Elias Maciel</Typography>
         <Link href="img/eliasmaciel_1000x1000.jpg">
