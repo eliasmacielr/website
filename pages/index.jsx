@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import MainLayout from "../components/MainLayout";
 
-export default function Index() {
+export default function Home() {
   return (
     <MainLayout>
       <section>
