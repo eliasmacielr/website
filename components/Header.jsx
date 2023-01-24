@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
-export default function Header(props) {
+import NavTabs from './NavTabs';
+
+export default function Header() {
   return (
     <>
       <Head>
@@ -26,12 +28,7 @@ export default function Header(props) {
           />
         </Link>
       </header>
-      <nav>
-        <Link href="/"><Typography variant='button'>Home</Typography></Link> |
-        <Link href="/projects"><Typography variant='button'>Projects</Typography></Link> |
-        <Link href="/courses-teaching"><Typography variant='button'>Courses &amp; Teaching</Typography></Link> |
-        <Link href="/contact-info"><Typography variant='button'>Contact &amp; Info</Typography></Link>
-      </nav>
+      <NavTabs />
     </>
   );
 }
