@@ -11,6 +11,7 @@ export default function NavTabs() {
         '& > :not(style) + :not(style)': {
           ml: 2,
         },
+        py: 2,
       }}>
         <Link href="/"><Typography variant='button'>Home</Typography></Link>
         <Link href="/projects"><Typography variant='button'>Projects</Typography></Link>

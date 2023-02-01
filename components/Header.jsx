@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Typography from '@mui/material/Typography';
 
 import NavTabs from './NavTabs';
+import { Divider } from '@mui/material';
 
 export default function Header() {
   return (
@@ -16,9 +17,9 @@ export default function Header() {
         <meta name="author" content="Elias Maciel" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header style={{ overflow: 'auto' }}>
-        <Typography variant='h1' style={{ display: 'inline-flex' }}>Elias Maciel</Typography>
-        <Link href="img/eliasmaciel_1000x1000.jpg">
+      <header style={{ overflow: 'auto', display: 'flex' }}>
+        <Typography variant='h1' style={{ display: 'inline-flex', alignItems: 'center' }}>Elias Maciel</Typography>
+        <Link href="img/eliasmaciel_1000x1000.jpg" style={{ marginLeft: 'auto' }}>
           <Image
             src="/img/eliasmaciel.jpg"
             height={100}
@@ -28,7 +29,9 @@ export default function Header() {
           />
         </Link>
       </header>
+      <Divider />
       <NavTabs />
+      <Divider />
     </>
   );
 }
