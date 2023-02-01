@@ -2,6 +2,7 @@ import { createTheme, ThemeProvider } from '@mui/material';
 import 'computer-modern/index.css';
 import Container from '@mui/material/Container';
 import Header from './Header';
+import Footer from './Footer';
 
 const theme = createTheme({
   palette: {
@@ -52,10 +53,11 @@ export default function MainLayout({ children }) {
   return (
     <ThemeProvider theme={theme}>
       <Container>
-        <Header/>
+        <Header />
         <main>
           {children}
         </main>
+        <Footer />
       </Container>
     </ThemeProvider>
   );
