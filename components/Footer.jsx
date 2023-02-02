@@ -7,7 +7,7 @@ export default function Footer() {
   const year = date.getFullYear();
   return (
     <>
-      <Divider />
+      <Divider sx={{ mt: 3 }}/>
       <footer>
         <Box sx={{ py: 3 }}>
           <Typography variant="h6" component="p">Built with Brain &amp; Brawn by Elias Maciel - {year}.</Typography>
