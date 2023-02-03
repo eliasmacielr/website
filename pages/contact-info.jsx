@@ -24,7 +24,7 @@ export default function ContactInfo() {
           },
       }}>
         <Link href="https://www.linkedin.com/in/eliasmacielr/" target="_blank" rel="noreferrer">
-          <Image src="/img/LI-In-Bug.png" alt="LinkedIn Logo" width={32} height={32} />
+          <Image src="/img/LI-In-Bug.png" alt="LinkedIn Logo" width={38} height={32} />
         </Link>
         <Link href="https://github.com/eliasmacielr" target="_blank" rel="noreferrer">
           <Image src="/img/GitHub-Mark-32px.png" alt="GitHub Logo" width={32} height={32} />
