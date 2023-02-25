@@ -55,6 +55,22 @@ export default function Home() {
       </section>
 
       <section>
+        <Typography variant='h2'>Publications</Typography>
+        <ul>
+          <li>
+            <Typography variant='h6' component='h3'>A Herglotz-based integrator for nonholonomic mechanical systems</Typography>
+            <Typography component='subtitle1'><a href="https://www.aimspress.com/article/doi/10.3934/jgm.2023012">https://www.aimspress.com/article/doi/10.3934/jgm.2023012</a></Typography>
+            <Typography variant='body1'>February 2023</Typography>
+          </li>
+          <li>
+            <Typography variant='h6' component='h3'>A comparison of geometric integrators for nonconservative and nonholonomic systems</Typography>
+            <Typography component='subtitle1'><a href="https://cilamce.com.br/anais/arearestrita/apresentacoes/182/8449.pdf">https://cilamce.com.br/anais/arearestrita/apresentacoes/182/8449.pdf</a></Typography>
+            <Typography variant='body1'>November 2020</Typography>
+          </li>
+        </ul>
+      </section>
+
+      <section>
         <Typography id="conferences-and-meetings" variant='h2'>Conferences and meetings</Typography>
         <ul>
           <li><Typography>CILAMCE 2020, XLI Ibero-Latin American Congress on Computational Methods in Engineering,
