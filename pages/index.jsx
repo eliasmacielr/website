@@ -104,7 +104,7 @@ export default function Home() {
         <ul>
           <li>
             <Typography>
-              <a href="docs/Presentaci_n_de_Integrador_de_Contacto_para_el_Disco_Controlado_que_rueda_sin_deslizamiento.pdf">Integrador de Contacto para el Disco Controlado que rueda sin deslizamiento</a>
+              <a href="docs/Integrador_geom_trico_de_contacto_con_restricciones_no_holon_micas___Poster_V_Encuentro_de_Investigadores_2020.pdf">Integrador geométrico de contacto con restricciones no holonómicas</a>
             </Typography>
           </li>
           <li>
