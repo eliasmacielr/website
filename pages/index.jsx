@@ -15,6 +15,12 @@ export default function Home() {
       <section>
         <Typography id="work" variant="h2">Work</Typography>
         <dl>
+          <dt><Typography component="p">Logo Media</Typography></dt>
+          <dd><Typography component="p">
+            Web Developer, March 2023-present.
+          </Typography></dd>
+        </dl>
+        <dl>
           <dt><Typography component="p">VR Products I LLC</Typography></dt>
           <dd><Typography component="p">
             Web Developer, December 2020-January 2023.
