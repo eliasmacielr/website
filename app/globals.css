@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "CMU Serif", ui-serif, serif;
+    @apply bg-gray-200;
+    @apply text-gray-800;
+  }
+
+  h1 {
+    @apply text-4xl;
+    @apply font-bold;
+  }
+  h2 {
+    @apply text-3xl;
+    @apply font-bold;
+  }
+  h3 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+  h4 {
+    @apply text-xl;
+  }
+  h5 {
+    @apply text-xl;
+  }
+  h6 {
+    @apply text-xl;
+  }
+
+  p, a, li, address {
+    @apply text-xl;
+  }
+
+  header a {
+    @apply text-gray-100;
+    @apply hover:text-gray-900;
+    @apply hover:bg-gray-100;
+    @apply no-underline;
+  }
+
+  a {
+    @apply text-blue-900;
+    @apply hover:text-gray-100;
+    @apply hover:bg-blue-900;
+    @apply underline;
+  }
+}
