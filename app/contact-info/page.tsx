@@ -39,7 +39,7 @@ export default function ContactInfo() {
 
       <a href="https://data.typeracer.com/pit/profile?user=eliasmacielr&ref=badge"
         target="_top"><img src="https://data.typeracer.com/misc/badge?user=eliasmacielr"
-          border="0" alt="TypeRacer.com scorecard for user eliasmacielr"/></a>
+          style={{border: 0}} alt="TypeRacer.com scorecard for user eliasmacielr"/></a>
     </>
   );
 }
