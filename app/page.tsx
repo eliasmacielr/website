@@ -4,14 +4,14 @@ export default function Home() {
   return (
     <div className="px-8 lg:p-0">
       <section className="lg:grid lg:grid-cols-3 mb-16">
-        <h2 id="interests" className="italic">Interests</h2>
+        <h2 id="interests" className="italic mb-4 lg:mb-0">Interests</h2>
         <div className="col-span-2">
           <p>My main areas of interest are web development and computer science.</p>
           <p>I study music with the bass guitar and practice Brazilian Jiu-Jitsu.</p>
         </div>
       </section>
       <section className="lg:grid lg:grid-cols-3 mb-16">
-        <h2 id="work" className="italic" >Work</h2>
+        <h2 id="work" className="italic mb-4 lg:mb-0" >Work</h2>
         <div className="col-span-2">
           <dl className="mb-8">
             <dt>
@@ -55,8 +55,8 @@ export default function Home() {
           </dl>
         </div>
       </section>
-      <section className="lg:grid lg:grid-cols-3">
-        <h2 id="education">Education</h2>
+      <section className="lg:grid lg:grid-cols-3 mb-16">
+        <h2 id="education" className="mb-4 lg:mb-0">Education</h2>
         <div className="col-span-2">
           <dl className="mb-8">
             <dt>
@@ -80,7 +80,7 @@ export default function Home() {
           </dl>
         </div>
       </section>
-      <section className="lg:grid lg:grid-cols-3 my-10 lg:my-0">
+      <section className="lg:grid lg:grid-cols-3 mb-16">
         <h2 id="publications">Publications</h2>
         <div className="col-span-2">
           <ul>
@@ -100,7 +100,7 @@ export default function Home() {
         </div>
       </section>
       <section className="lg:grid lg:grid-cols-3 mb-16">
-        <h2 id="conferences-and-meetings">Conferences and meetings</h2>
+        <h2 id="conferences-and-meetings" className="mb-4 lg:mb-0">Conferences and meetings</h2>
         <div className="col-span-2">
           <ul>
             <li>
@@ -131,8 +131,8 @@ export default function Home() {
           </ul>
         </div>
       </section>
-      <section className="lg:grid lg:grid-cols-3">
-        <h2 id="posters-and-presentations">Posters and presentations</h2>
+      <section className="lg:grid lg:grid-cols-3 mb-16">
+        <h2 id="posters-and-presentations" className="mb-4 lg:mb-0">Posters and presentations</h2>
         <div className="col-span-2">
           <ul>
             <li>
@@ -150,8 +150,8 @@ export default function Home() {
           </ul>
         </div>
       </section>
-      <section className="lg:grid lg:grid-cols-3">
-        <h2 id="awards">Awards</h2>
+      <section className="lg:grid lg:grid-cols-3 mb-16">
+        <h2 id="awards" className="mt-4 mb-6 lg:mb-0 lg:mt-0">Awards</h2>
         <div className="col-span-2">
           <ul>
             <li><b>Merit Honor</b>, National University of Asunción - 2018.</li>

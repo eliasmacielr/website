@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Projects() {
   return (
     <div className="px-8 lg:px-0">
-      <h2 id="projects">Projects</h2>
+      <h2 id="projects" className="mb-4 lg:mb-0">Projects</h2>
       <article className="mb-16">
         <h3 className="mb-5 lg:mb-0">Turista.com.py</h3>
         <p>Destinos turísticos de Paraguay con agencias de viajes, hoteles, restaurantes, pronóstico del clima y todo lo necesario para una estancia perfecta sin importar el lugar elegido.</p>
