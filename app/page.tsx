@@ -2,16 +2,16 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <>
-      <section className="grid grid-cols-3 mb-16">
+    <div className="px-8 lg:p-0">
+      <section className="lg:grid lg:grid-cols-3 mb-16">
         <h2 id="interests" className="italic">Interests</h2>
         <div className="col-span-2">
           <p>My main areas of interest are web development and computer science.</p>
           <p>I study music with the bass guitar and practice Brazilian Jiu-Jitsu.</p>
         </div>
       </section>
-      <section className="grid grid-cols-3 mb-16">
-        <h2 id="work" className="italic">Work</h2>
+      <section className="lg:grid lg:grid-cols-3 mb-16">
+        <h2 id="work" className="italic" >Work</h2>
         <div className="col-span-2">
           <dl className="mb-8">
             <dt>
@@ -55,7 +55,7 @@ export default function Home() {
           </dl>
         </div>
       </section>
-      <section className="grid grid-cols-3 mb-16">
+      <section className="lg:grid lg:grid-cols-3">
         <h2 id="education">Education</h2>
         <div className="col-span-2">
           <dl className="mb-8">
@@ -80,26 +80,26 @@ export default function Home() {
           </dl>
         </div>
       </section>
-      <section className="grid grid-cols-3 mb-16">
+      <section className="lg:grid lg:grid-cols-3 my-10 lg:my-0">
         <h2 id="publications">Publications</h2>
         <div className="col-span-2">
           <ul>
-            <li>
+            <li className="my-4">
               <h3>A Herglotz-based integrator for nonholonomic mechanical systems</h3>
-              <Link href="https://www.aimspress.com/article/doi/10.3934/jgm.2023012" target="_blank">https://www.aimspress.com/article/doi/10.3934/jgm.2023012</Link>
+              <Link className="truncate text-ellipsis w-50 block" href="https://www.aimspress.com/article/doi/10.3934/jgm.2023012" target="_blank">https://www.aimspress.com/article/doi/10.3934/jgm.2023012</Link>
               <p>February 2023</p>
             </li>
           </ul>
           <ul>
             <li>
               <h3>A comparison of geometric integrators for nonconservative and nonholonomic systems</h3>
-              <Link href="https://cilamce.com.br/anais/arearestrita/apresentacoes/182/8449.pdf" target="_blank">https://cilamce.com.br/anais/arearestrita/apresentacoes/182/8449.pdf</Link>
+              <Link className="truncate text-ellipsis w-50 block" href="https://cilamce.com.br/anais/arearestrita/apresentacoes/182/8449.pdf" target="_blank">https://cilamce.com.br/anais/arearestrita/apresentacoes/182/8449.pdf</Link>
               <p>November 2020</p>
             </li>
           </ul>
         </div>
       </section>
-      <section className="grid grid-cols-3 mb-16">
+      <section className="lg:grid lg:grid-cols-3 mb-16">
         <h2 id="conferences-and-meetings">Conferences and meetings</h2>
         <div className="col-span-2">
           <ul>
@@ -131,7 +131,7 @@ export default function Home() {
           </ul>
         </div>
       </section>
-      <section className="grid grid-cols-3 mb-16">
+      <section className="lg:grid lg:grid-cols-3">
         <h2 id="posters-and-presentations">Posters and presentations</h2>
         <div className="col-span-2">
           <ul>
@@ -150,7 +150,7 @@ export default function Home() {
           </ul>
         </div>
       </section>
-      <section className="grid grid-cols-3">
+      <section className="lg:grid lg:grid-cols-3">
         <h2 id="awards">Awards</h2>
         <div className="col-span-2">
           <ul>
@@ -158,6 +158,6 @@ export default function Home() {
           </ul>
         </div>
       </section>
-    </>
+    </div>
   )
 }
