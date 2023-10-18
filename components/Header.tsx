@@ -28,7 +28,9 @@ export default function Header() {
           <Link className="py-1 px-8 order-1" href="/">Home</Link>
         </div>
         <a href="#" className="absolute right-0 top-0 p-3.5 lg:hidden" onClick={myFunction as MouseEventHandler<HTMLAnchorElement>}>
-          Menu
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+          </svg>
         </a>
       </div>
     </header>
