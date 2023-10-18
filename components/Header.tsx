@@ -22,10 +22,10 @@ export default function Header() {
       </div>
       <div className="topnav w-full lg:w-auto">
         <div id="myLinks" className="hidden lg:text-xl lg:flex flex-col lg:flex-row lg:justify-center lg:py-4 lg:gap-8">
-          <Link className="py-1 px-3 order-2" href="/projects">Projects</Link>
-          <Link className="py-1 px-3 order-4" href="/contact-info">Contact &amp; Info</Link>
-          <Link className="py-1 px-3 order-3" href="/courses-teaching">Courses &amp; Teaching</Link>
-          <Link className="py-1 px-3 order-1" href="/">Home</Link>
+          <Link className="py-1 px-8 order-2" href="/projects">Projects</Link>
+          <Link className="py-1 px-8 order-4" href="/contact-info">Contact &amp; Info</Link>
+          <Link className="py-1 px-8 order-3" href="/courses-teaching">Courses &amp; Teaching</Link>
+          <Link className="py-1 px-8 order-1" href="/">Home</Link>
         </div>
         <a href="#" className="absolute right-0 top-0 p-3.5 lg:hidden" onClick={myFunction as MouseEventHandler<HTMLAnchorElement>}>
           Menu

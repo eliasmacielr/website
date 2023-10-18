@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function CoursesAndTeaching() {
   return (
-    <>
+    <div className="px-8 lg:px-0">
       <h2 id="teaching" className="mb-4">Teaching</h2>
       <dl className="mb-12">
         <dt>
@@ -29,6 +29,6 @@ export default function CoursesAndTeaching() {
         <li className="mb-2"><p><Link href="http://www.cc.pol.una.py/index.php/2016/06/01/current-trends-in-data-science-seminar/" target="_blank" rel="noreferrer">Current Trends in Data Science</Link></p></li>
         <li className="mb-2"><p><Link href="#">Introducción a la Programación Competitiva</Link></p></li>
       </ul>
-    </>
+    </div>
   )
 }

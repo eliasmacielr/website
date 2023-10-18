@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function ContactInfo() {
   return (
-    <>
+    <div className="px-8 lg:px-0">
       <h2 id="contact-and-info" className="mb-4">Contact Info</h2>
 
       <address className=" mb-8">
@@ -40,6 +40,6 @@ export default function ContactInfo() {
       <a href="https://data.typeracer.com/pit/profile?user=eliasmacielr&ref=badge"
         target="_top"><img src="https://data.typeracer.com/misc/badge?user=eliasmacielr"
           style={{border: 0}} alt="TypeRacer.com scorecard for user eliasmacielr"/></a>
-    </>
+    </div>
   );
 }
