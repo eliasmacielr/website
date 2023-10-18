@@ -23,7 +23,7 @@ export default function Header() {
       <div className="topnav w-full lg:w-auto">
         <div id="myLinks" className="hidden lg:text-xl lg:flex flex-col lg:flex-row lg:justify-center lg:py-4 lg:gap-8">
           <Link className="py-1 px-8 order-2" href="/projects">Projects</Link>
-          <Link className="py-1 px-8 order-4" href="/contact-info">Contact &amp; Info</Link>
+          <Link className="py-1 px-8 order-4 mb-4 lg:mb-0" href="/contact-info">Contact &amp; Info</Link>
           <Link className="py-1 px-8 order-3" href="/courses-teaching">Courses &amp; Teaching</Link>
           <Link className="py-1 px-8 order-1" href="/">Home</Link>
         </div>
