@@ -18,6 +18,11 @@ export default function Header() {
   return (
     <header className="flex flex-col items-center bg-slate-800 text-gray-200">
       <div className="max-w-screen-xl w-full">
+        <h1 className="text-xl lg:text-5xl text-left lg:text-center pl-10 pb-2 pt-4 lg:pt-16 lg:pb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10.552px" height="12.776px" viewBox="0 -694 583 706" aria-hidden="true"><defs><path id="MJX-10-TEX-I-1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D706" href="#MJX-10-TEX-I-1D706"></use></g></g></g></svg>
+        </h1>
+      </div>
+      <div className="max-w-screen-xl w-full">
         <h1 className="text-xl lg:text-5xl text-left lg:text-center pl-10 pb-2 pt-4 lg:pt-16 lg:pb-6">Elias Maciel&apos;s Home Page</h1>
       </div>
       {/* Desktop nav */}
