@@ -23,7 +23,7 @@ export default function Header() {
         </h1>
       </div>
       <div className="max-w-screen-xl w-full">
-        <h1 className="text-xl lg:text-5xl text-center pb-2 pt-4 lg:pt-16 lg:pb-6">Elias Maciel&apos;s Home Page</h1>
+        <h1 className="text-3lg px-6 lg:text-5xl text-center pb-2 pt-4 lg:pt-16 lg:pb-6">Elias Maciel&apos;s <br/> Home Page</h1>
       </div>
       {/* Desktop nav */}
       <div className="hidden lg:text-xl lg:flex flex-col lg:flex-row lg:justify-center lg:py-4 lg:gap-8 mb-4 lg:mb-0">
