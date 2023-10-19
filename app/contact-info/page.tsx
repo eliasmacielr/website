@@ -23,8 +23,8 @@ export default function ContactInfo() {
           <Image src="/img/GitHub-Mark-32px.png" alt="GitHub Logo" width={32} height={32} />
           eliasmacielr
         </Link>
-        <Link href="https://twitter.com/eliasmacielr" target="_blank" rel="noreferrer"  className="flex flex-row gap-4">
-          <Image src="/img/Twitter_Social_Icon_Circle_Color.png" alt="Twitter Logo" width={32} height={32} />
+        <Link href="https://x.com/eliasmacielr" target="_blank" rel="noreferrer"  className="flex flex-row gap-4">
+          <Image src="/img/X_logo.png" alt="X Logo" width={32} height={32} />
           @eliasmacielr
         </Link>
         <Link href="https://www.instagram.com/eliasmacielcc/" target="_blank" rel="noreferrer"  className="flex flex-row gap-4">
