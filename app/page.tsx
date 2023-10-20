@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <div className="px-8 lg:p-0">
+    <div className="px-8 lg:px-0">
       <section className="lg:grid lg:grid-cols-3 mb-16">
         <h2 id="interests" className="italic mb-4 lg:mb-0">Interests</h2>
         <div className="col-span-2">
