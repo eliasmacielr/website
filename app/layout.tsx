@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        <div className="max-w-screen-xl w-full mx-auto py-16">
+        <div className="max-w-screen-xl w-full mx-auto py-16 lg:px-8">
           {children}
         </div>
         <Footer />
