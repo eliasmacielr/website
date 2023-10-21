@@ -31,7 +31,10 @@
     @apply text-xl;
   }
 
-  p, a, li, address {
+  p,
+  a,
+  li,
+  address {
     @apply text-xl;
   }
 
