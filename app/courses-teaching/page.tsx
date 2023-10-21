@@ -2,13 +2,13 @@ import Link from 'next/link'
 
 export default function CoursesAndTeaching() {
   return (
-    <div className="px-8 lg:px-0">
-      <h2 id="teaching" className="mb-4">
+    <div className='px-8 lg:px-0'>
+      <h2 id='teaching' className='mb-4'>
         Teaching
       </h2>
-      <dl className="mb-12">
+      <dl className='mb-12'>
         <dt>
-          <p className="font-bold">Algorithms I</p>
+          <p className='font-bold'>Algorithms I</p>
         </dt>
         <dd>
           <p>
@@ -20,16 +20,16 @@ export default function CoursesAndTeaching() {
           </p>
         </dd>
       </dl>
-      <dl className="mb-12">
+      <dl className='mb-12'>
         <dt>
-          <p className="font-bold">Programación Funcional en Haskell</p>
+          <p className='font-bold'>Programación Funcional en Haskell</p>
         </dt>
         <dd>
           <p>
             <Link
-              href="https://drive.google.com/open?id=1hKwQ8JaRDSUPoV-IUloNr6DpI3fbt8WT"
-              target="_blank"
-              rel="noreferrer"
+              href='https://drive.google.com/open?id=1hKwQ8JaRDSUPoV-IUloNr6DpI3fbt8WT'
+              target='_blank'
+              rel='noreferrer'
             >
               [materials]
             </Link>
@@ -37,31 +37,31 @@ export default function CoursesAndTeaching() {
         </dd>
       </dl>
 
-      <h2 id="schools-and-seminars" className="mb-4">
+      <h2 id='schools-and-seminars' className='mb-4'>
         Schools and seminars I&apos;ve attended
       </h2>
       <ul>
-        <li className="mb-2">
+        <li className='mb-2'>
           <p>
-            <Link href="https://www.ci2ma.udec.cl/epanum2019/">
+            <Link href='https://www.ci2ma.udec.cl/epanum2019/'>
               EPANUM 2019
             </Link>
           </p>
         </li>
-        <li className="mb-2">
+        <li className='mb-2'>
           <p>
             <Link
-              href="http://www.cc.pol.una.py/index.php/2016/06/01/current-trends-in-data-science-seminar/"
-              target="_blank"
-              rel="noreferrer"
+              href='http://www.cc.pol.una.py/index.php/2016/06/01/current-trends-in-data-science-seminar/'
+              target='_blank'
+              rel='noreferrer'
             >
               Current Trends in Data Science
             </Link>
           </p>
         </li>
-        <li className="mb-2">
+        <li className='mb-2'>
           <p>
-            <Link href="#">Introducción a la Programación Competitiva</Link>
+            <Link href='#'>Introducción a la Programación Competitiva</Link>
           </p>
         </li>
       </ul>
