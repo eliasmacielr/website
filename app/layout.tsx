@@ -44,10 +44,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <Header />
-        <div className="mx-auto w-full max-w-screen-xl py-16 lg:px-8">
+        <div className='mx-auto w-full max-w-screen-xl py-16 lg:px-8'>
           {children}
         </div>
         <Footer />
