@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -96,7 +96,7 @@ export default function Home() {
                 Advisor: Prof. Christian Schaerer
                 <br />
                 Thesis: Evaluation of Block Conjugate Gradient for a Single
-                Right-Hand Side{" "}
+                Right-Hand Side{' '}
                 <Link href="http://www.cc.pol.una.py/~cschaer/Tesis-Elias%20Maciel.pdf">
                   [PDF]
                 </Link>
@@ -257,5 +257,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  );
+  )
 }

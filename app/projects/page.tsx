@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function Projects() {
   return (
@@ -21,7 +21,7 @@ export default function Projects() {
         <h3 className="mb-5 lg:mb-0">MSU</h3>
         <p>
           R language library for Multivariate Symmetrical Uncertainty
-          measurement and other related estimators.{" "}
+          measurement and other related estimators.{' '}
           <Link
             href="https://cran.r-project.org/web/packages/msu/index.html"
             target="_blank"
@@ -43,7 +43,7 @@ export default function Projects() {
             Understanding a Version of Multivariate Symmetric Uncertainty to
             assist in Feature Selection
           </cite>
-          .{" "}
+          .{' '}
           <Link
             href="https://arxiv.org/abs/1709.08730"
             target="_blank"
@@ -77,5 +77,5 @@ export default function Projects() {
         </Link>
       </article>
     </div>
-  );
+  )
 }

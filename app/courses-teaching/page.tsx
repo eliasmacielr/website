@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export default function CoursesAndTeaching() {
   return (
@@ -66,5 +66,5 @@ export default function CoursesAndTeaching() {
         </li>
       </ul>
     </div>
-  );
+  )
 }
