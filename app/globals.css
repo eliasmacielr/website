@@ -51,4 +51,37 @@
     @apply hover:bg-blue-900;
     @apply underline;
   }
+
+  #expand-right {
+    animation: expandRight;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  #move-right {
+    animation: moveRight;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  #move-right-x {
+    animation: moveRightX;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes moveRight {
+    from { left: 0vw; }
+    to { left: calc(100vw - 80px); }
+  }
+
+  @keyframes moveRightX {
+    from { left: 0vw; }
+    to { left: calc(100vw - 50px); }
+  }
+
+  @Keyframes expandRight {
+    from { width: 30px; }
+    to { width: calc(100vw - 75px); }
+  }
 }
