@@ -52,6 +52,12 @@
     @apply underline;
   }
 
+  #move-y {
+    animation: moveY;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
   #expand-right {
     animation: expandRight;
     animation-duration: 3s;
@@ -70,18 +76,45 @@
     animation-fill-mode: forwards;
   }
 
+  #arrow-up {
+    animation: moveUP;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  #expand-up {
+    animation: expandUp;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
   @keyframes moveRight {
     from { left: 0vw; }
     to { left: calc(100vw - 80px); }
   }
 
   @keyframes moveRightX {
-    from { left: 0vw; }
+    from { left: 3vw; }
     to { left: calc(100vw - 50px); }
   }
 
   @Keyframes expandRight {
     from { width: 30px; }
     to { width: calc(100vw - 75px); }
+  }
+
+  @keyframes moveUP {
+    from { bottom: 3vh;left: -3px; }
+    to { bottom: calc(100vh - 50px); left: -3px; }
+  }
+
+  @keyframes expandUp{
+    from { height: 30px; left:5px; }
+    to { height: calc(100vh - 47px); left:5px; }
+  }
+
+  @keyframes moveY{
+    from { top: 0px;left: -2px; }
+    to {  top: calc(100vh - 30px); left:-2px; }
   }
 }
