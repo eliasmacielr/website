@@ -59,6 +59,7 @@
   }
 
   #expand-right {
+    margin-bottom: 5px;
     animation: expandRight;
     animation-duration: 3s;
     animation-fill-mode: forwards;
@@ -89,18 +90,18 @@
   }
 
   @keyframes moveRight {
-    from { left: 0vw; }
-    to { left: calc(100vw - 80px); }
+    from { left: 0vw; bottom: 3px; }
+    to { left: calc(100vw - 80px); bottom: 3px; }
   }
 
   @keyframes moveRightX {
-    from { left: 3vw; }
-    to { left: calc(100vw - 50px); }
+    from { left: 3vw; bottom: 2px;}
+    to { left: calc(100vw - 50px); bottom: 2px; }
   }
 
   @Keyframes expandRight {
-    from { width: 30px; }
-    to { width: calc(100vw - 75px); }
+    from { width: 30px; bottom: 10px; }
+    to { width: calc(100vw - 75px); bottom: 10px;}
   }
 
   @keyframes moveUP {
