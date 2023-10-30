@@ -5,7 +5,7 @@
 @layer base {
   html {
     font-family: 'CMU Serif', ui-serif, serif;
-    @apply bg-gray-200;
+    @apply bg-yellow-50;
     @apply text-gray-800;
   }
 
