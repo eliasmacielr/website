@@ -23,6 +23,8 @@ module.exports = {
       white: colors.white,
       gray: colors.gray,
       blue: colors.blue,
+      yellow: colors.yellow,
+      red: colors.red,
     },
   },
   plugins: [],
