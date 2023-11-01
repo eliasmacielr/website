@@ -104,6 +104,8 @@ export default function Header() {
                   </svg>
                 </a>
       </div>
+      <div id="overlay-1"></div>
+      <div id="overlay-2"></div>
     </header>
   )
 }
