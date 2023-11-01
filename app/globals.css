@@ -52,6 +52,38 @@
     @apply underline;
   }
 
+  #overlay-2 {
+    display:flex;
+    position: fixed;
+    width: 100%;
+    height: calc( 100vh - 75px );
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color:black;
+    z-index: 2;
+    cursor: pointer;
+    animation: overlayHorizontal;
+    animation-duration:3s;
+    animation-fill-mode: forwards;
+  }
+
+  #overlay-1 {
+    display:flex;
+    position: fixed;
+    width: calc( 100vw - 120px );
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color:black;
+    z-index: 2;
+    cursor: pointer;
+    animation: overlayVertical;
+    animation-duration:3s;
+    animation-fill-mode: forwards;
+  }
+
   #move-y {
     animation: moveY;
     animation-duration: 3s;
@@ -116,6 +148,16 @@
 
   @keyframes moveY{
     from { top: 0px;left: -2px; }
-    to {  top: calc(100vh - 30px); left:-2px; }
+    to { top: calc(100vh - 30px); left:-2px; }
   }
+
+  @keyframes overlayVertical {
+  from { width: calc( 100vw - 120px ); }
+  to { width: 0px;}
+  }
+
+  @keyframes overlayHorizontal {
+    from { height: calc( 100vh - 75px ); }
+    to { height: 0px;}
+    }
 }
