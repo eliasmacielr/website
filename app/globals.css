@@ -147,8 +147,8 @@
   }
 
   @keyframes moveY{
-    from { top: 0px;left: -2px; }
-    to { top: calc(100vh - 30px); left:-2px; }
+    from { bottom: 30px; left: -2px; }
+    to { bottom: calc(100vh - 50px); left:-2px; }
   }
 
   @keyframes overlayVertical {
