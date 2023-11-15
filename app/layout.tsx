@@ -5,6 +5,8 @@ import './globals.css'
 
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import XAxis from '../components/XAxis'
+import YAxis from '../components/YAxis'
 
 import 'computer-modern/index.css'
 
@@ -54,6 +56,8 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <XAxis />
+        <YAxis />
       </body>
     </html>
   )
