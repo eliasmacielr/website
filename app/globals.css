@@ -102,55 +102,53 @@
     animation-fill-mode: forwards;
   }
 
-  #expand-right {
-    margin-bottom: 5px;
-    animation: expandRight;
+  #x-axis-bar {
+    animation: expandXAxis;
     animation-duration: 3s;
     animation-fill-mode: forwards;
   }
 
-  #move-right {
-    animation: moveRight;
+  #arrow-right {
+    animation: moveArrowRight;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    margin-left: -5px; /* compensate for left horizontal space */
+  }
+
+  #x-label {
+    animation: moveXLabel;
     animation-duration: 3s;
     animation-fill-mode: forwards;
   }
 
-  #move-right-x {
-    animation: moveRightX;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-  }
-
-  @keyframes moveRight {
-    from {
-      left: 0vw;
-      bottom: 3px;
-    }
-    to {
-      left: calc(100vw - 65px);
-      bottom: 3px;
-    }
-  }
-
-  @keyframes moveRightX {
-    from {
-      left: 3vw;
-      bottom: 2px;
-    }
-    to {
-      left: calc(100vw - 35px);
-      bottom: 2px;
-    }
-  }
-
-  @keyframes expandRight {
+  @keyframes expandXAxis {
     from {
       width: 30px;
-      bottom: 10px;
     }
     to {
-      width: calc(100vw - 60px);
-      bottom: 10px;
+      width: calc(
+        100vw - 46.03px
+      ); /* view width - arrow right (24px) + horizontal space (5px) + x label (22.03px) + horizontal space (5px) */
+    }
+  }
+
+  @keyframes moveArrowRight {
+    from {
+      left: 30px;
+    }
+    to {
+      left: calc(100vw - 46.03px);
+    }
+  }
+
+  @keyframes moveXLabel {
+    from {
+      left: 54px;
+    }
+    to {
+      left: calc(
+        100vw - 27.03px
+      ); /* view width - horizontal space (5px) + x label (22.03px) + horizontal space (5px) */
     }
   }
 

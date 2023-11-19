@@ -1,7 +1,12 @@
 export default function YAxis() {
   return (
-    <div className='fixed bottom-0 left-0'>
-      <svg className='text-blue-600' height='7' width='30' id='expand-right'>
+    <div className='fixed bottom-[5px] left-0' aria-hidden='true'>
+      <svg
+        id='x-axis-bar'
+        className='absolute bottom-[3px] left-0 text-blue-600'
+        height='10'
+        width='30'
+      >
         <line
           x1='0'
           y1='0'
@@ -9,18 +14,15 @@ export default function YAxis() {
           y2='0'
           style={{ stroke: 'currentcolor', strokeWidth: 10 }}
         />
-        Sorry, your browser does not support inline SVG.
       </svg>
       <svg
-        className='bottom- left-29px absolute -bottom-0.5 text-blue-600'
-        id='move-right'
+        id='arrow-right'
+        className='absolute bottom-[3px] text-blue-600'
         xmlns='http://www.w3.org/2000/svg'
         width='24px'
         height='14.1636px'
         viewBox='0 -539 778 580'
         xmlnsXlink='http://www.w3.org/1999/xlink'
-        aria-hidden='true'
-        style={{}}
       >
         <defs>
           <path
@@ -41,16 +43,15 @@ export default function YAxis() {
           </g>
         </g>
       </svg>
+
       <svg
-        className='bottom- left-29px absolute -bottom-0.5 text-blue-600'
-        id='move-right-x'
+        id='x-label'
+        className='absolute bottom-0 text-blue-600'
         xmlns='http://www.w3.org/2000/svg'
         width='22.035px'
         height='20.495px'
         viewBox='0 -442 572 453'
         xmlnsXlink='http://www.w3.org/1999/xlink'
-        aria-hidden='true'
-        style={{}}
       >
         <defs>
           <path
