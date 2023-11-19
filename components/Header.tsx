@@ -94,18 +94,16 @@ export default function Header() {
             viewBox='0 0 24 24'
             stroke-width='1.5'
             stroke='currentColor'
-                    className='h-6 w-6'
-                  >
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      d='M3.75 9h16.5m-16.5 6.75h16.5'
-                    />
-                  </svg>
-                </a>
+            className='h-6 w-6'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              d='M3.75 9h16.5m-16.5 6.75h16.5'
+            />
+          </svg>
+        </a>
       </div>
-      <div id="overlay-1"></div>
-      <div id="overlay-2"></div>
     </header>
   )
 }
