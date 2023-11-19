@@ -29,15 +29,16 @@ export const metadata: Metadata = {
   authors: [{ name: 'Elias Maciel', url: 'eliasmacielr.org' }],
   creator: 'Elias Maciel',
   publisher: 'Elias Maciel',
-  colorScheme: 'light',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
   icons: {
     icon: '/favicon.svg',
   },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  colorScheme: 'light',
 }
 
 export default function RootLayout({
