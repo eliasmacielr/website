@@ -53,39 +53,51 @@
   }
 
   #overlay-2 {
-    display:flex;
+    display: flex;
     position: fixed;
     width: 100%;
-    height: calc( 100vh - 75px );
+    height: calc(100vh - 75px);
     top: 0;
     left: 0;
     right: 0;
-    background-color:black;
+    background-color: black;
     z-index: 2;
     cursor: pointer;
     animation: overlayHorizontal;
-    animation-duration:3s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
   }
 
   #overlay-1 {
-    display:flex;
+    display: flex;
     position: fixed;
-    width: calc( 100vw - 120px );
+    width: calc(100vw - 120px);
     height: 100%;
     top: 0;
     right: 0;
     bottom: 0;
-    background-color:black;
+    background-color: black;
     z-index: 2;
     cursor: pointer;
     animation: overlayVertical;
-    animation-duration:3s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
   }
 
-  #move-y {
-    animation: moveY;
+  #y-label {
+    animation: moveYLabel;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  #arrow-up {
+    animation: moveArrowUp;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  #y-axis-bar {
+    animation: expandYAxis;
     animation-duration: 3s;
     animation-fill-mode: forwards;
   }
@@ -109,55 +121,87 @@
     animation-fill-mode: forwards;
   }
 
-  #arrow-up {
-    animation: moveUP;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-  }
-
-  #expand-up {
-    animation: expandUp;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-  }
-
   @keyframes moveRight {
-    from { left: 0vw; bottom: 3px; }
-    to { left: calc(100vw - 65px); bottom: 3px; }
+    from {
+      left: 0vw;
+      bottom: 3px;
+    }
+    to {
+      left: calc(100vw - 65px);
+      bottom: 3px;
+    }
   }
 
   @keyframes moveRightX {
-    from { left: 3vw; bottom: 2px;}
-    to { left: calc(100vw - 35px); bottom: 2px; }
+    from {
+      left: 3vw;
+      bottom: 2px;
+    }
+    to {
+      left: calc(100vw - 35px);
+      bottom: 2px;
+    }
   }
 
-  @Keyframes expandRight {
-    from { width: 30px; bottom: 10px; }
-    to { width: calc(100vw - 60px); bottom: 10px;}
+  @keyframes expandRight {
+    from {
+      width: 30px;
+      bottom: 10px;
+    }
+    to {
+      width: calc(100vw - 60px);
+      bottom: 10px;
+    }
   }
 
-  @keyframes moveUP {
-    from { bottom: 3vh;left: -3px; }
-    to { bottom: calc(100vh - 50px); left: -3px; }
+  @keyframes moveYLabel {
+    from {
+      bottom: 51.16px; /* bar (30px) + arrow up (16.16px) + vertical space (5px) */
+    }
+    to {
+      bottom: calc(
+        100vh - 34.27px
+      ); /* view height - vertical space (5px) + y label (29.27px) */
+    }
   }
 
-  @keyframes expandUp{
-    from { height: 30px; left:5px; }
-    to { height: calc(100vh - 47px); left:5px; }
+  @keyframes moveArrowUp {
+    from {
+      bottom: 30px; /* bar (30px) */
+    }
+    to {
+      bottom: calc(
+        100vh - 55.43px
+      ); /* view height - vertical space (5px) + y label (29.27px) + vertical space (5px) + arrow up (16.16px) */
+    }
   }
 
-  @keyframes moveY{
-    from { bottom: 30px; left: -2px; }
-    to { bottom: calc(100vh - 50px); left:-2px; }
+  @keyframes expandYAxis {
+    from {
+      height: 30px;
+    }
+    to {
+      height: calc(
+        100vh - 55.43px
+      ); /* view height - vertical space (5px) + y label (29.27px) + vertical space (5px) + arrow up (16.16px) */
+    }
   }
 
   @keyframes overlayVertical {
-  from { width: calc( 100vw - 120px ); }
-  to { width: 0px;}
+    from {
+      width: calc(100vw - 120px);
+    }
+    to {
+      width: 0px;
+    }
   }
 
   @keyframes overlayHorizontal {
-    from { height: calc( 100vh - 75px ); }
-    to { height: 0px;}
+    from {
+      height: calc(100vh - 75px);
     }
+    to {
+      height: 0px;
+    }
+  }
 }
