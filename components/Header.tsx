@@ -35,7 +35,7 @@ export default function Header() {
             <g
               stroke='currentColor'
               fill='currentColor'
-              stroke-width='0'
+              strokeWidth='0'
               transform='scale(1,-1)'
             >
               <g data-mml-node='math'>
@@ -92,7 +92,7 @@ export default function Header() {
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
             viewBox='0 0 24 24'
-            stroke-width='1.5'
+            strokeWidth='1.5'
             stroke='currentColor'
             className='h-6 w-6'
           >
