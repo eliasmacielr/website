@@ -19,7 +19,7 @@ export default function YAxis() {
         <g
           stroke='currentcolor'
           fill='currentcolor'
-          stroke-width='0'
+          strokeWidth='0'
           transform='scale(1,-1)'
         >
           <g data-mml-node='math'>
@@ -48,7 +48,7 @@ export default function YAxis() {
         <g
           stroke='currentcolor'
           fill='currentcolor'
-          stroke-width='0'
+          strokeWidth='0'
           transform='scale(1,-1)'
         >
           <g data-mml-node='math'>
@@ -60,16 +60,20 @@ export default function YAxis() {
       </svg>
       <svg
         id='y-axis-bar'
-        className='absolute bottom-0 left-[8.5px] text-red-600'
+        className='absolute bottom-0 left-[7.5px] text-red-600'
+        xmlns='http://www.w3.org/2000/svg'
+        width='15'
         height='30'
-        width='10'
+        xmlnsXlink='http://www.w3.org/1999/xlink'
+        style={{ height: '100vh' }}
       >
-        <line
-          x1='0'
-          y1='0'
-          x2='0'
-          y2='100vh'
-          style={{ stroke: 'currentcolor', strokeWidth: 10 }}
+        <rect
+          className='absolute bottom-0'
+          width='5'
+          height='30'
+          stroke='currentColor'
+          fill='currentColor'
+          strokeWidth='1'
         />
       </svg>
     </div>

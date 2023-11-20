@@ -1,18 +1,21 @@
-export default function YAxis() {
+export default function XAxis() {
   return (
     <div className='fixed bottom-[5px] left-0' aria-hidden='true'>
       <svg
         id='x-axis-bar'
-        className='absolute bottom-[3px] left-0 text-blue-600'
-        height='10'
+        className='absolute bottom-[-2px] left-0 text-blue-600'
+        xmlns='http://www.w3.org/2000/svg'
         width='30'
+        height='15'
+        xmlnsXlink='http://www.w3.org/1999/xlink'
+        style={{ width: '100vw' }}
       >
-        <line
-          x1='0'
-          y1='0'
-          x2='100vw'
-          y2='0'
-          style={{ stroke: 'currentcolor', strokeWidth: 10 }}
+        <rect
+          width='30'
+          height='5'
+          stroke='currentColor'
+          fill='currentColor'
+          strokeWidth='1'
         />
       </svg>
       <svg
@@ -33,7 +36,7 @@ export default function YAxis() {
         <g
           stroke='currentcolor'
           fill='currentcolor'
-          stroke-width='0'
+          strokeWidth='0'
           transform='scale(1,-1)'
         >
           <g data-mml-node='math'>
@@ -62,7 +65,7 @@ export default function YAxis() {
         <g
           stroke='currentcolor'
           fill='currentcolor'
-          stroke-width='0'
+          strokeWidth='0'
           transform='scale(1,-1)'
         >
           <g data-mml-node='math'>
