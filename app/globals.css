@@ -84,25 +84,7 @@
     animation-fill-mode: forwards;
   }
 
-  #y-label {
-    animation: moveYLabel;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-  }
-
-  #arrow-up {
-    animation: moveArrowUp;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-  }
-
-  #y-axis-bar {
-    animation: expandYAxis;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-  }
-
-  #x-axis-bar {
+  #x-axis-bar rect {
     animation: expandXAxis;
     animation-duration: 3s;
     animation-fill-mode: forwards;
@@ -150,6 +132,24 @@
         100vw - 27.03px
       ); /* view width - horizontal space (5px) + x label (22.03px) + horizontal space (5px) */
     }
+  }
+
+  #y-label {
+    animation: moveYLabel;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  #arrow-up {
+    animation: moveArrowUp;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  #y-axis-bar rect {
+    animation: expandYAxis;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
   }
 
   @keyframes moveYLabel {
