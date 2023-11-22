@@ -60,7 +60,7 @@ export default function YAxis() {
       </svg>
       <svg
         id='y-axis-bar'
-        className='absolute bottom-0 left-[7.5px] text-red-600'
+        className='absolute bottom-0 left-[-1px] text-red-600 origin-center rotate-180'
         xmlns='http://www.w3.org/2000/svg'
         width='15'
         height='30'
