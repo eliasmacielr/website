@@ -1,6 +1,6 @@
 export default function YAxis() {
   return (
-    <div className='fixed bottom-0 left-[5px]' aria-hidden='true'>
+    <div className='overflow-visible fixed bottom-0 left-[5px]' aria-hidden='true'>
       <svg
         id='y-label'
         className='absolute text-red-600'
