@@ -64,7 +64,7 @@
     z-index: 2;
     cursor: pointer;
     animation: overlayHorizontal;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
   }
 
@@ -80,26 +80,26 @@
     z-index: 2;
     cursor: pointer;
     animation: overlayVertical;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
   }
 
   #x-axis-bar rect {
     animation: expandXAxis;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
   }
 
   #arrow-right {
     animation: moveArrowRight;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
     margin-left: -5px; /* compensate for left horizontal space */
   }
 
   #x-label {
     animation: moveXLabel;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
   }
 
@@ -136,19 +136,19 @@
 
   #y-label {
     animation: moveYLabel;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
   }
 
   #arrow-up {
     animation: moveArrowUp;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
   }
 
   #y-axis-bar rect {
     animation: expandYAxis;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
   }
 
