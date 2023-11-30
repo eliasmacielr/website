@@ -1,6 +1,27 @@
+'use client'
+import { motion } from 'framer-motion'
+
+const draw = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: (i) => {
+    const delay = 1 + i * 0.5
+    return {
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: { delay, type: 'spring', duration: 5, bounce: 0 },
+        opacity: { delay, duration: 0.01 },
+      },
+    }
+  },
+}
+
 export default function YAxis() {
   return (
-    <div className='overflow-visible fixed bottom-0 left-[5px]' aria-hidden='true'>
+    <div
+      className='fixed bottom-0 left-[5px] overflow-visible'
+      aria-hidden='true'
+    >
       <svg
         id='y-label'
         className='absolute text-red-600'
@@ -58,24 +79,29 @@ export default function YAxis() {
           </g>
         </g>
       </svg>
-      <svg
-        id='y-axis-bar'
-        className='absolute bottom-0 left-[-1px] text-red-600 origin-center rotate-180'
+
+      <motion.svg
+        variants={draw}
+        className='absolute bottom-0 left-[-1px] origin-center rotate-180 text-red-600'
         xmlns='http://www.w3.org/2000/svg'
         width='15'
-        height='30'
+        // height='calc(100vh - 55.43px)'
         xmlnsXlink='http://www.w3.org/1999/xlink'
         style={{ height: '100vh' }}
       >
-        <rect
+        <motion.rect
+          animate={{ height: '90vh' }}
+          initial={{ height: 0 }}
           className='absolute bottom-0'
           width='5'
-          height='30'
+          height='calc(100vh - 55.43px)'
           stroke='currentColor'
           fill='currentColor'
           strokeWidth='1'
+          variants={draw}
         />
-      </svg>
+      </motion.svg>
+      <motion.div></motion.div>
     </div>
   )
 }
