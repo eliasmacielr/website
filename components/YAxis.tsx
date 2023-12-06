@@ -1,5 +1,6 @@
 'use client'
 import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
@@ -9,7 +10,7 @@ const draw = {
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { delay, type: 'spring', duration: 5, bounce: 0 },
+        pathLength: { delay, type: 'spring', duration: 2, bounce: 0 },
         opacity: { delay, duration: 0.01 },
       },
     }
@@ -17,6 +18,40 @@ const draw = {
 }
 
 export default function YAxis() {
+  const size = useWindowSize()
+
+  function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+      width: 0,
+      height: 0,
+    })
+
+    useEffect(() => {
+      // only execute all the code below in client side
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        })
+      }
+
+      // Add event listener
+      window.addEventListener('resize', handleResize)
+
+      // Call handler right away so state gets updated with initial window size
+      handleResize()
+
+      // Remove event listener on cleanup
+      return () => window.removeEventListener('resize', handleResize)
+    }, []) // Empty array ensures that effect is only run on mount
+
+    return windowSize
+  }
+
   return (
     <div
       className='fixed bottom-0 left-[5px] overflow-visible'
@@ -85,16 +120,17 @@ export default function YAxis() {
         className='absolute bottom-0 left-[-1px] origin-center rotate-180 text-red-600'
         xmlns='http://www.w3.org/2000/svg'
         width='15'
-        // height='calc(100vh - 55.43px)'
+        height='size.height'
         xmlnsXlink='http://www.w3.org/1999/xlink'
         style={{ height: '100vh' }}
       >
         <motion.rect
-          animate={{ height: '90vh' }}
-          initial={{ height: 0 }}
+          animate={{ height: size.height - 55 }}
+          initial={{ height: 30 }}
+          transition={{ duration: 2 }}
           className='absolute bottom-0'
           width='5'
-          height='calc(100vh - 55.43px)'
+          height='30px'
           stroke='currentColor'
           fill='currentColor'
           strokeWidth='1'
@@ -105,3 +141,48 @@ export default function YAxis() {
     </div>
   )
 }
+// import * as React from "react";
+// import { useRef } from "react";
+// import { motion, sync, useCycle } from "framer-motion";
+// import { useDimensions } from "./use-dimensions";
+// import { MenuToggle } from "./MenuToggle";
+// import { Navigation } from "./Navigation";
+
+// const sidebar = {
+//   open: (height = 1000) => ({
+//     clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+//     transition: {
+//       type: "spring",
+//       stiffness: 20,
+//       restDelta: 2
+//     }
+//   }),
+//   closed: {
+//     clipPath: "circle(30px at 40px 40px)",
+//     transition: {
+//       delay: 0.5,
+//       type: "spring",
+//       stiffness: 400,
+//       damping: 40
+//     }
+//   }
+// };
+
+// export const Example = () => {
+//   const [isOpen, toggleOpen] = useCycle(false, true);
+//   const containerRef = useRef(null);
+//   const { height } = useDimensions(containerRef);
+
+//   return (
+//     <motion.nav
+//       initial={false}
+//       animate={isOpen ? "open" : "closed"}
+//       custom={height}
+//       ref={containerRef}
+//     >
+//       <motion.div className="background" variants={sidebar} />
+//       <Navigation />
+//       <MenuToggle toggle={() => toggleOpen()} />
+//     </motion.nav>
+//   );
+// };
