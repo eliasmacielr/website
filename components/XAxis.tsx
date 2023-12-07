@@ -1,8 +1,60 @@
+'use client'
+import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+
+const draw = {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: (i) => {
+    const delay = 1 + i * 0.5
+    return {
+      pathLength: 1,
+      opacity: 1,
+      transition: {
+        pathLength: { delay, type: 'spring', duration: 2, bounce: 0 },
+        opacity: { delay, duration: 0.01 },
+      },
+    }
+  },
+}
 export default function XAxis() {
+  const size = useWindowSize()
+
+  function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+      width: 0,
+      height: 0,
+    })
+
+    useEffect(() => {
+      // only execute all the code below in client side
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        })
+      }
+
+      // Add event listener
+      window.addEventListener('resize', handleResize)
+
+      // Call handler right away so state gets updated with initial window size
+      handleResize()
+
+      // Remove event listener on cleanup
+      return () => window.removeEventListener('resize', handleResize)
+    }, []) // Empty array ensures that effect is only run on mount
+
+    return windowSize
+  }
+
   return (
     <div className='fixed bottom-[5px] left-0' aria-hidden='true'>
-      <svg
-        id='x-axis-bar'
+      <motion.svg
+        // id='x-axis-bar'
         className='absolute bottom-[-2px] left-0 text-blue-600'
         xmlns='http://www.w3.org/2000/svg'
         width='30'
@@ -10,16 +62,22 @@ export default function XAxis() {
         xmlnsXlink='http://www.w3.org/1999/xlink'
         style={{ width: '100vw' }}
       >
-        <rect
+        <motion.rect
+          animate={{ width: size.width - 46 }}
+          initial={{ width: 30 }}
+          transition={{ duration: 2 }}
           width='30'
           height='5'
           stroke='currentColor'
           fill='currentColor'
           strokeWidth='1'
         />
-      </svg>
-      <svg
-        id='arrow-right'
+      </motion.svg>
+      <motion.svg
+        // id='arrow-right'
+        animate={{ x: size.width - 51 }}
+        initial={{ x: 30 }}
+        transition={{ duration: 2 }}
         className='absolute bottom-[3px] text-blue-600'
         xmlns='http://www.w3.org/2000/svg'
         width='24px'
@@ -45,10 +103,13 @@ export default function XAxis() {
             </g>
           </g>
         </g>
-      </svg>
+      </motion.svg>
 
-      <svg
-        id='x-label'
+      <motion.svg
+        // id='x-label'
+        animate={{ x: size.width - 30 }}
+        initial={{ x: 51 }}
+        transition={{ duration: 2 }}
         className='absolute bottom-0 text-blue-600'
         xmlns='http://www.w3.org/2000/svg'
         width='22.035px'
@@ -74,7 +135,7 @@ export default function XAxis() {
             </g>
           </g>
         </g>
-      </svg>
+      </motion.svg>
     </div>
   )
 }
