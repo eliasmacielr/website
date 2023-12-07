@@ -56,8 +56,8 @@ export default function RootLayout({
         <Footer />
         <XAxis />
         <YAxis />
-        <div id='overlay-1'></div>
-        <div id='overlay-2'></div>
+        <div id='overlay-x-axis'></div>
+        <div id='overlay-y-axis'></div>
       </body>
     </html>
   )
