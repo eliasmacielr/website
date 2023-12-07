@@ -86,9 +86,12 @@ export default function YAxis() {
         </g>
       </svg>
 
-      <svg
-        id='arrow-up'
-        className='absolute text-red-600'
+      <motion.svg
+        // id='arrow-up'
+        animate={{ y: -size.height + 40 }}
+        initial={{ y: -45 }}
+        transition={{ duration: 2 }}
+        className='absolute  text-red-600'
         xmlns='http://www.w3.org/2000/svg'
         width='22px'
         height='16.1636px'
@@ -113,7 +116,7 @@ export default function YAxis() {
             </g>
           </g>
         </g>
-      </svg>
+      </motion.svg>
 
       <motion.svg
         variants={draw}
@@ -122,7 +125,7 @@ export default function YAxis() {
         width='15'
         height='size.height'
         xmlnsXlink='http://www.w3.org/1999/xlink'
-        style={{ height: '100vh' }}
+        style={{ height: 'calc(100vh - 55.43px)' }}
       >
         <motion.rect
           animate={{ height: size.height - 55 }}
