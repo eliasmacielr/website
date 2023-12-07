@@ -122,27 +122,25 @@ export default function YAxis() {
 
       <motion.svg
         variants={draw}
-        className='absolute bottom-0 left-[-1px] origin-center rotate-180 text-red-600'
+        className='absolute bottom-0 left-[-1px] origin-center rotate-180 overflow-visible text-red-600'
         xmlns='http://www.w3.org/2000/svg'
         width='15'
-        height='size.height'
         xmlnsXlink='http://www.w3.org/1999/xlink'
         style={{ height: 'calc(100vh - 55.43px)' }}
       >
         <motion.rect
           animate={{ height: size.height - 55 }}
           initial={{ height: 30 }}
+          variants={draw}
           transition={{ duration: 2 }}
-          className='absolute bottom-0'
+          // className='absolute bottom-0'
           width='5'
           height='30px'
           stroke='currentColor'
           fill='currentColor'
           strokeWidth='1'
-          variants={draw}
         />
       </motion.svg>
-      <motion.div></motion.div>
     </div>
   )
 }

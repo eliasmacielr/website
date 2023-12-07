@@ -76,7 +76,7 @@ export default function XAxis() {
       <motion.svg
         // id='arrow-right'
         animate={{ x: size.width - 51 }}
-        initial={{ x: 30 }}
+        initial={{ x: 20 }}
         transition={{ duration: 2 }}
         className='absolute bottom-[3px] text-blue-600'
         xmlns='http://www.w3.org/2000/svg'
