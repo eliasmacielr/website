@@ -57,9 +57,12 @@ export default function YAxis() {
       className='fixed bottom-0 left-[5px] overflow-visible'
       aria-hidden='true'
     >
-      <svg
+      <motion.svg
         id='y-label'
-        className='absolute text-red-600'
+        animate={{ y: -size.height + 40 }}
+        initial={{ y: -45 }}
+        transition={{ duration: 2 }}
+        className=' text-red-600'
         xmlns='http://www.w3.org/2000/svg'
         width='21.507px'
         height='29.28px'
@@ -84,7 +87,7 @@ export default function YAxis() {
             </g>
           </g>
         </g>
-      </svg>
+      </motion.svg>
 
       <motion.svg
         // id='arrow-up'
