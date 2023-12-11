@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import XAxis from '../components/XAxis'
 import YAxis from '../components/YAxis'
+import Overlay from '../components/Overlay'
 
 import 'computer-modern/index.css'
 
@@ -54,8 +55,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
-        <div id='overlay-x-axis'></div>
-        <div id='overlay-y-axis'></div>
+        <Overlay />
         <XAxis />
         <YAxis />
       </body>
