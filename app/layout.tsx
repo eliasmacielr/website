@@ -57,10 +57,10 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
-        <XAxis />
-        <YAxis />
         <div id='overlay-x-axis'></div>
         <div id='overlay-y-axis'></div>
+        <XAxis />
+        <YAxis />
       </body>
     </html>
   )
