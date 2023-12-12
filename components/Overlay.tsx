@@ -53,7 +53,7 @@ export default function Overlay() {
   }
 
   return (
-    <div className='fixed right-0 top-0 z-50 h-full w-full'>
+    <div className='fixed right-0 top-0 h-full w-full'>
       <motion.div
         className='h-5/6 w-full bg-black'
         initial={{ height: 'size.height - 100px' }}
@@ -62,7 +62,7 @@ export default function Overlay() {
         variants={draw}
       />
       <motion.div
-        className='fixed right-0 top-0 h-full w-11/12 bg-black'
+        className='fixed right-0 top-0 h-full w-7/12 bg-black  lg:w-11/12'
         initial={{
           width: 'calc(size.width - 100px)',
           height: 'size.height - 100px',
