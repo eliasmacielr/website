@@ -55,20 +55,24 @@ export default function Overlay() {
   return (
     <div className='fixed right-0 top-0 z-50 h-fit w-fit'>
       <motion.div
-        className='fixed right-0 top-0 h-full w-7/12 bg-black  lg:w-11/12'
+        id='overlay-x-axis'
+        className='fixed right-0 top-0 h-full w-full'
         initial={{
-          width: 'calc(size.width - 100px)',
-          height: 'size.height - 100px',
+          width: 'size.width - 75px ',
+          height: 'size.height',
+          backgroundColor: 'black',
         }}
         animate={{
           width: '0px',
-          height: 'size.height - 100px',
+          height: 'size.height',
+          backgroundColor: 'black',
         }}
         transition={{ duration: 2 }}
         variants={draw}
       />
       <motion.div
-        className='fixed right-0 top-0 h-5/6 w-full bg-black'
+        id='overlay-y-axis'
+        className='fixed right-0 top-0 h-fit w-fit bg-black'
         initial={{
           height: 'size.height - 100px',
           width: '100vw',
