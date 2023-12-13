@@ -54,7 +54,7 @@ export default function XAxis() {
   return (
     <div className='fixed bottom-[5px] left-0' aria-hidden='true'>
       <motion.svg
-        // id='x-axis-bar'
+        //'x-axis-bar'
         className='absolute bottom-[-2px] left-0 text-blue-600'
         xmlns='http://www.w3.org/2000/svg'
         width='30'
@@ -74,7 +74,7 @@ export default function XAxis() {
         />
       </motion.svg>
       <motion.svg
-        // id='arrow-right'
+        //'arrow-right'
         animate={{ x: size.width - 51 }}
         initial={{ x: 45 }}
         transition={{ duration: 2 }}
@@ -106,7 +106,7 @@ export default function XAxis() {
       </motion.svg>
 
       <motion.svg
-        // id='x-label'
+        // x-label
         animate={{ x: size.width - 30 }}
         initial={{ x: 70 }}
         transition={{ duration: 2 }}

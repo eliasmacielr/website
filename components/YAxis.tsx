@@ -89,7 +89,7 @@ export default function YAxis() {
       </motion.svg>
 
       <motion.svg
-        // id='arrow-up'
+        //'arrow-up'
         animate={{ y: -size.height + 40 }}
         initial={{ y: -45 }}
         transition={{ duration: 2 }}

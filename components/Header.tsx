@@ -68,7 +68,7 @@ export default function Header() {
         </Link>
       </div>
       {/* Mobile nav */}
-      <div className='topnav w-full lg:hidden lg:w-auto'>
+      <div className=' w-full lg:hidden lg:w-auto'>
         <div id='myLinks' className='mb-4 hidden flex-col lg:mb-0'>
           <Link className='px-8 py-1' href='/'>
             Home
