@@ -9,18 +9,18 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.8",
-    "@emotion/styled": "^11.10.8",
-    "@mui/material": "^5.11.16",
-    "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "@typescript-eslint/parser": "^6.8.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.19",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
     "computer-modern": "^0.1.2",
-    "eslint-config-next": "^13.1.6",
-    "framer-motion": "^10.16.16",
+    "eslint-config-next": "^13.5.6",
+    "framer-motion": "^10.18.0",
     "next": "^14.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^5.2.2"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.4.5"
   },
   "repository": {
     "type": "git",
@@ -35,15 +35,15 @@
   "homepage": "https://github.com/eliasmacielr/website#readme",
   "description": "",
   "devDependencies": {
-    "@types/node": "20.8.10",
+    "@types/node": "20.12.14",
     "autoprefixer": "^10.4.19",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "husky": "^8.0.3",
-    "lint-staged": "^15.0.2",
+    "lint-staged": "^15.2.5",
     "postcss": "^8.4.38",
-    "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.14",
-    "tailwindcss": "^3.3.7"
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.6.1",
+    "tailwindcss": "^3.4.3"
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
