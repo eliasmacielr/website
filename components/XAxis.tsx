@@ -2,20 +2,6 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-const draw = {
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: (i) => {
-    const delay = 1 + i * 0.5
-    return {
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        pathLength: { delay, type: 'spring', duration: 2, bounce: 0 },
-        opacity: { delay, duration: 0.01 },
-      },
-    }
-  },
-}
 export default function XAxis() {
   const size = useWindowSize()
 
@@ -54,7 +40,6 @@ export default function XAxis() {
   return (
     <div className='fixed bottom-[5px] left-0' aria-hidden='true'>
       <motion.svg
-        // id='x-axis-bar'
         className='absolute bottom-[-2px] left-0 text-blue-600'
         xmlns='http://www.w3.org/2000/svg'
         width='30'
@@ -74,7 +59,6 @@ export default function XAxis() {
         />
       </motion.svg>
       <motion.svg
-        // id='arrow-right'
         animate={{ x: size.width - 51 }}
         initial={{ x: 45 }}
         transition={{ duration: 2 }}
@@ -104,9 +88,7 @@ export default function XAxis() {
           </g>
         </g>
       </motion.svg>
-
       <motion.svg
-        // id='x-label'
         animate={{ x: size.width - 30 }}
         initial={{ x: 70 }}
         transition={{ duration: 2 }}
