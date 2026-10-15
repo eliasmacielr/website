@@ -138,7 +138,7 @@ export default function Calendar({
 
   // Start the day view at 7:00.
   useEffect(() => {
-    if (scrollRef.current) scrollRef.current.scrollTop = 7 * HOUR
+    if (scrollRef.current) scrollRef.current.scrollTop = 7 * HOUR - 12
   }, [])
 
   // Pick up changes made by other people.

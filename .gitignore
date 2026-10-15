@@ -3,3 +3,5 @@ node_modules
 
 eliasmacielr-webpage.zip
 .DS_Store
+.vercel
+.env*.local
