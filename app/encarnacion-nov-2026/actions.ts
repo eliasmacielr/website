@@ -1,5 +1,9 @@
 'use server'
 
+import { cookies } from 'next/headers'
+import { redirect } from 'next/navigation'
+
+import { COOKIE, PATH, requireAccess, sameToken, token } from './access'
 import { getSupabase, TABLE } from './supabase'
 import { Activity, ActivityInput, COLORS, ColorName, DAYS } from './shared'
 
@@ -46,6 +50,7 @@ function checkId(id: string) {
 }
 
 export async function listActivities(): Promise<Activity[]> {
+  await requireAccess()
   const { data, error } = await getSupabase()
     .from(TABLE)
     .select(COLUMNS)
@@ -56,6 +61,7 @@ export async function listActivities(): Promise<Activity[]> {
 }
 
 export async function createActivity(input: ActivityInput): Promise<Activity> {
+  await requireAccess()
   const { data, error } = await getSupabase()
     .from(TABLE)
     .insert(clean(input))
@@ -69,6 +75,7 @@ export async function updateActivity(
   id: string,
   input: ActivityInput,
 ): Promise<Activity> {
+  await requireAccess()
   checkId(id)
   const { data, error } = await getSupabase()
     .from(TABLE)
@@ -81,7 +88,26 @@ export async function updateActivity(
 }
 
 export async function deleteActivity(id: string): Promise<void> {
+  await requireAccess()
   checkId(id)
   const { error } = await getSupabase().from(TABLE).delete().eq('id', id)
   if (error) throw new Error(error.message)
+}
+
+export async function unlock(formData: FormData) {
+  const passcode = process.env.ENCARNACION_PASSCODE
+  const attempt = String(formData.get('passcode') ?? '').trim()
+  if (!passcode || !sameToken(token(attempt), token(passcode))) {
+    // Slow down guessing.
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+    redirect(`${PATH}?wrong=1`)
+  }
+  ;(await cookies()).set(COOKIE, token(passcode), {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'lax',
+    path: PATH,
+    maxAge: 60 * 60 * 24 * 90,
+  })
+  redirect(PATH)
 }
