@@ -709,17 +709,21 @@ function Editor({
     <div
       className='fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4 font-sans'
       onPointerDown={(e) => e.target === e.currentTarget && onCancel()}
-      onKeyDown={(e) => e.key === 'Escape' && onCancel()}
+      onKeyDown={(e) => {
+        if (e.key !== 'Escape') return
+        if (confirming) setConfirming(false)
+        else onCancel()
+      }}
     >
       <form
         className='w-full max-w-md rounded-xl bg-white p-5 shadow-2xl'
         onSubmit={(e) => {
           e.preventDefault()
-          if (!invalid) onSave()
+          if (!invalid && !confirming) onSave()
         }}
       >
         <input
-          autoFocus
+          autoFocus={!confirming}
           className='mb-4 w-full border-b border-gray-200 pb-1 text-lg font-semibold focus:border-blue-500 focus:outline-none'
           placeholder='New activity'
           value={draft.title}
