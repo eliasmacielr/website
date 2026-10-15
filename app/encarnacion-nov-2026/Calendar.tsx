@@ -116,6 +116,7 @@ export default function Calendar({
   const [draft, setDraft] = useState<Draft | null>(null)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [askDelete, setAskDelete] = useState(false)
 
   const scrollRef = useRef<HTMLDivElement>(null)
   const gridRef = useRef<HTMLDivElement>(null)
@@ -134,6 +135,11 @@ export default function Calendar({
   const setGhost = (g: Ghost | null) => {
     ghostRef.current = g
     setGhostState(g)
+  }
+
+  const closeEditor = () => {
+    setDraft(null)
+    setAskDelete(false)
   }
 
   const flashError = (message: string) => {
@@ -234,9 +240,14 @@ export default function Calendar({
       const target = e.target as HTMLElement
       if (target.closest('input, textarea, select')) return
       if (e.key === 'Backspace' || e.key === 'Delete') {
+        // Ask inside the page: window.confirm() can be suppressed by the
+        // browser ("prevent additional dialogs") and silently return false.
         const activity = activities.find((a) => a.id === selectedId)
-        if (activity && window.confirm(`Delete “${activity.title}”?`))
-          remove(selectedId)
+        if (activity) {
+          e.preventDefault()
+          setAskDelete(true)
+          setDraft({ ...activity })
+        }
       } else if (e.key === 'Escape') {
         setSelectedId(null)
       }
@@ -595,17 +606,18 @@ export default function Calendar({
       {draft && (
         <Editor
           draft={draft}
+          askDelete={askDelete}
           onChange={setDraft}
-          onCancel={() => setDraft(null)}
+          onCancel={closeEditor}
           onSave={() => {
             save(draft)
-            setDraft(null)
+            closeEditor()
           }}
           onDelete={
             draft.id
               ? () => {
                   remove(draft.id!)
-                  setDraft(null)
+                  closeEditor()
                 }
               : undefined
           }
@@ -674,17 +686,20 @@ function ActivityBlock({
 
 function Editor({
   draft,
+  askDelete,
   onChange,
   onCancel,
   onSave,
   onDelete,
 }: {
   draft: Draft
+  askDelete: boolean
   onChange: (d: Draft) => void
   onCancel: () => void
   onSave: () => void
   onDelete?: () => void
 }) {
+  const [confirming, setConfirming] = useState(askDelete)
   const set = (patch: Partial<Draft>) => onChange({ ...draft, ...patch })
   const invalid = !draft.all_day && draft.end_min <= draft.start_min
   const field =
@@ -833,34 +848,55 @@ function Editor({
           </div>
         )}
 
-        <div className='mt-5 flex items-center gap-2'>
-          {onDelete && (
+        {confirming && onDelete ? (
+          <div className='mt-5 flex items-center gap-2 rounded-md bg-red-50 p-2'>
+            <span className='flex-1 text-sm text-red-800'>
+              Delete this activity?
+            </span>
             <button
               type='button'
-              className='rounded-md px-3 py-1.5 text-sm text-red-700 hover:bg-red-50'
-              onClick={() => {
-                if (window.confirm('Delete this activity?')) onDelete()
-              }}
+              className='rounded-md px-3 py-1.5 text-sm text-gray-700 hover:bg-white'
+              onClick={() => setConfirming(false)}
             >
-              Delete
+              Keep
             </button>
-          )}
-          <div className='flex-1' />
-          <button
-            type='button'
-            className='rounded-md px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-100'
-            onClick={onCancel}
-          >
-            Cancel
-          </button>
-          <button
-            type='submit'
-            disabled={invalid}
-            className='rounded-md bg-blue-600 px-4 py-1.5 text-sm text-white hover:bg-blue-700 disabled:opacity-50'
-          >
-            Save
-          </button>
-        </div>
+            <button
+              type='button'
+              autoFocus
+              className='rounded-md bg-red-700 px-3 py-1.5 text-sm text-white hover:bg-red-800'
+              onClick={onDelete}
+            >
+              Yes, delete
+            </button>
+          </div>
+        ) : (
+          <div className='mt-5 flex items-center gap-2'>
+            {onDelete && (
+              <button
+                type='button'
+                className='rounded-md px-3 py-1.5 text-sm text-red-700 hover:bg-red-50'
+                onClick={() => setConfirming(true)}
+              >
+                Delete
+              </button>
+            )}
+            <div className='flex-1' />
+            <button
+              type='button'
+              className='rounded-md px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-100'
+              onClick={onCancel}
+            >
+              Cancel
+            </button>
+            <button
+              type='submit'
+              disabled={invalid}
+              className='rounded-md bg-blue-600 px-4 py-1.5 text-sm text-white hover:bg-blue-700 disabled:opacity-50'
+            >
+              Save
+            </button>
+          </div>
+        )}
       </form>
     </div>
   )
