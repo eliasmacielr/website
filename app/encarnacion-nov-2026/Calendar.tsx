@@ -123,6 +123,11 @@ export default function Calendar({
   const ghostRef = useRef<Ghost | null>(null)
   const draftRef = useRef<Draft | null>(null)
   const pendingRef = useRef(0)
+  // Bumped when a refresh starts or a local mutation begins so in-flight
+  // refreshes cannot apply a snapshot that predates newer local state.
+  const refreshIdRef = useRef(0)
+  // Per-activity counter so only the latest in-flight save may commit or roll back.
+  const saveGenRef = useRef(new Map<string, number>())
 
   draftRef.current = draft
 
@@ -145,8 +150,10 @@ export default function Calendar({
   useEffect(() => {
     const refresh = async () => {
       if (dragRef.current || draftRef.current || pendingRef.current > 0) return
+      const id = ++refreshIdRef.current
       try {
         const fresh = await listActivities()
+        if (id !== refreshIdRef.current) return
         if (!dragRef.current && !draftRef.current && pendingRef.current === 0)
           setActivities(fresh)
       } catch {
@@ -164,21 +171,27 @@ export default function Calendar({
   async function save(next: Draft) {
     const { id, ...input } = next
     pendingRef.current++
+    refreshIdRef.current++
     try {
       if (id) {
         const previous = activities.find((a) => a.id === id)
+        const gen = (saveGenRef.current.get(id) ?? 0) + 1
+        saveGenRef.current.set(id, gen)
         setActivities((list) =>
           list.map((a) => (a.id === id ? { ...a, ...input } : a)),
         )
         try {
           const row = await updateActivity(id, input)
-          setActivities((list) => list.map((a) => (a.id === id ? row : a)))
+          if (saveGenRef.current.get(id) === gen)
+            setActivities((list) => list.map((a) => (a.id === id ? row : a)))
         } catch {
-          if (previous)
-            setActivities((list) =>
-              list.map((a) => (a.id === id ? previous : a)),
-            )
-          flashError('Could not save the change.')
+          if (saveGenRef.current.get(id) === gen) {
+            if (previous)
+              setActivities((list) =>
+                list.map((a) => (a.id === id ? previous : a)),
+              )
+            flashError('Could not save the change.')
+          }
         }
       } else {
         const tempId = `temp-${Date.now()}`
@@ -200,6 +213,8 @@ export default function Calendar({
     const previous = activities.find((a) => a.id === id)
     if (!previous) return
     pendingRef.current++
+    refreshIdRef.current++
+    saveGenRef.current.set(id, (saveGenRef.current.get(id) ?? 0) + 1)
     setActivities((list) => list.filter((a) => a.id !== id))
     setSelectedId(null)
     try {
