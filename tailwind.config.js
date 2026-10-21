@@ -1,10 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-
-import colors from 'tailwindcss/colors'
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}', // Note the addition of the `app` directory.
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
