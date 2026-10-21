@@ -62,7 +62,7 @@
     "glob@10": "^10.5.0",
     "yaml@1": "1.10.3",
     "yaml@2": "^2.8.3",
-    "braces": "git+https://github.com/Im-Fran/braces.git#3.0.4"
+    "braces": "https://github.com/Im-Fran/braces/archive/refs/tags/3.0.4.tar.gz"
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
